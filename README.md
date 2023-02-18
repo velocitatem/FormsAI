@@ -30,3 +30,19 @@ Create a config JSON with your OpenAI API key.
 
 ## Possible Applications
 Provided, that we would have enough information about a user, we could use this to automatically fill out surveys for them, but there is a lot of possibility for bias and error.
+
+## Possible Countermeasures
+1. Require human verification: This could be done in the form of a captcha or a human verification question.
+
+2. Track IP address: If the same IP is used to fill out multiple surveys, then it could be flagged as suspicious.
+
+3. Check for strange responses: If the responses don't make sense or are too extreme then it could be flagged as suspicious.
+
+4. Use special algorithms: Algorithms could be used to analyze the responses and determine if they are valid or not.
+
+5. GPTzero
+
+
+## Dependencies
+* [Suppress.js](https://github.com/velocitatem/suppress)
+* [Google Forms HTML exporter](https://github.com/cybercase/google-forms-html-exporter)
