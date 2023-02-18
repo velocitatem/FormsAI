@@ -2,9 +2,8 @@
 ![import](https://img.shields.io/badge/Important-Educational%20purposes%20only-success)
 ![beta](https://img.shields.io/badge/Beta-Put%20together%20overnight-orange)
 
-<video width="320" height="240" controls>
-  <source src="demo.mp4" type="video/mp4">
-</video>
+![demo](./demo.gif)
+
 
 This program is designed to provide automated responses to questions in a web form. It uses a natural language processing algorithm to identify the most relevant response to the question, and then adds the response to the form.
 
