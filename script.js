@@ -62,4 +62,5 @@ await fetch(url).then(res => res.json()).then(async (data) => {
         console.log(question);
         // add query parameter to the urlObj
     }
+    console.log(urlObj.toString());
 })

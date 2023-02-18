@@ -1,0 +1,25 @@
+{
+  "name": "googleformsai",
+  "version": "1.0.0",
+  "description": "This is a simple algorithm, which can automatically fill out a google forms survey with AI responses. This was made with the purpose of demonstrating how AI can be mis-used to taint data, although it could be useful for 'counter-surveillance', I see that as being very rare with Google Forms.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/velocitatem/GoogleFormsAI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/velocitatem/GoogleFormsAI/issues"
+  },
+  "homepage": "https://github.com/velocitatem/GoogleFormsAI#readme",
+  "dependencies": {
+    "ai.suppress.js": "^1.3.3",
+    "mix.suppress.js": "^1.0.2"
+  }
+}
