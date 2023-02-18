@@ -1,6 +1,8 @@
 ![warn](https://img.shields.io/badge/Warning-Use%20at%20your%20own%20risk-critical)
 ![import](https://img.shields.io/badge/Important-Educational%20purposes%20only-success)
-# Google Forms AI
+
+![logo](./logo.png)
+
 This is a simple algorithm, which can automatically fill out a google forms survey with AI responses.
 This was made with the purpose of demonstrating how AI can be mis-used to taint data, although it could be useful for 'counter-surveillance', I see that as being very rare with Google Forms.
 
