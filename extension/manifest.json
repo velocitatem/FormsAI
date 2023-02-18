@@ -1,0 +1,22 @@
+{
+
+    "manifest_version": 2,
+    "name": "FormsAI",
+    "version": "1.0",
+
+    "description": "Uses AI to fill out forms for you",
+
+    "icons": {
+        "48": "../logo.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://docs.google.com/forms*"],
+            "js": ["script.js"]
+        }
+    ],
+    "permissions": [
+        "*://*.ondigitalocean.app/*",
+        "https://*.ngrok.io/*"
+    ]
+}
