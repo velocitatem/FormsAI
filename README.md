@@ -4,10 +4,9 @@
 
 ![logo](./logo.png)
 
-This is a simple algorithm, which can automatically fill out a google forms survey with AI responses.
-This was made with the purpose of demonstrating how AI can be mis-used to taint data, although it could be useful for 'counter-surveillance', I see that as being very rare with Google Forms.
+This program is designed to provide automated responses to questions in a web form. It uses a natural language processing algorithm to identify the most relevant response to the question, and then adds the response to the form.
 
-I am working on a way to counter this 'exploit' and abuse.
+This was made with the purpose of demonstrating how AI can be mis-used to taint data, although it could be useful for 'counter-surveillance', I see that as being very rare with Google Forms.
 
 ## How does it work?
 
