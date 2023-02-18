@@ -34,30 +34,33 @@ await fetch(url).then(res => res.json()).then(async (data) => {
     for (let i = 0; i < questions.length; i++) {
         let question = questions[i];
         let response;
-        if (question.widges && question.widgets[0].options) {
-            // MC question
-            let choices = question.widgets[0].options.map((option) => option.label);
-            // remove any empty strings from the choices
-            choices = choices.filter((choice) => choice !== "");
-            choices = choices.join(",");
-            response = await getResponseMC(title, about, question.label, choices);
-            // get the label with the highest score
-            let maxScore = 0;
-            let maxScoreIndex = 0;
-            for (let j = 0; j < response.scores.length; j++) {
-                if (response.scores[j] > maxScore) {
-                    maxScore = response.scores[j];
-                    maxScoreIndex = j;
+        let hasWidget = question.widgets;
+        if(hasWidget) {
+            if (question.widgets[0].options) {
+                // MC question
+                let choices = question.widgets[0].options.map((option) => option.label);
+                // remove any empty strings from the choices
+                choices = choices.filter((choice) => choice !== "");
+                choices = choices.join(",");
+                response = await getResponseMC(title, about, question.label, choices);
+                // get the label with the highest score
+                let maxScore = 0;
+                let maxScoreIndex = 0;
+                for (let j = 0; j < response.scores.length; j++) {
+                    if (response.scores[j] > maxScore) {
+                        maxScore = response.scores[j];
+                        maxScoreIndex = j;
+                    }
                 }
+                response = response.labels[maxScoreIndex];
+                let lab = "entry."+question.widgets[0].id
+                urlObj.searchParams.append(lab, response)
+            } else {
+                let inQ = question.label+"\n"+question.desc
+                response = await getResponseText(title, about, inQ);
+                let lab = "entry."+question.widgets[0].id
+                urlObj.searchParams.append(lab, response)
             }
-            response = response.labels[maxScoreIndex];
-            let lab = "entry."+question.widgets[0].id
-            urlObj.searchParams.append(lab, response)
-        } else {
-            let inQ = question.label+"\n"+question.desc
-            response = await getResponseText(title, about, inQ);
-            let lab = "entry."+question.widgets[0].id
-            urlObj.searchParams.append(lab, response)
         }
         console.log(question);
     }

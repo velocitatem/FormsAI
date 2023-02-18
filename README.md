@@ -34,6 +34,9 @@ Create a config JSON with your OpenAI API key.
 Provided, that we would have enough information about a user, we could use this to automatically fill out surveys for them, but there is a lot of possibility for bias and error.
 
 ## Possible Countermeasures
+
+Here is a way to counter this exploit, although it is not perfect: [counter measure](./counter_measure_1.md)
+
 1. Require human verification: This could be done in the form of a captcha or a human verification question.
 
 2. Track IP address: If the same IP is used to fill out multiple surveys, then it could be flagged as suspicious.
