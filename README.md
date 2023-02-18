@@ -51,3 +51,11 @@ Here is a way to counter this exploit, although it is not perfect: [counter meas
 ## Dependencies
 * [Suppress.js](https://github.com/velocitatem/suppress)
 * [Google Forms HTML exporter](https://github.com/cybercase/google-forms-html-exporter)
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+What is missing:
+* [ ] Browser extension
+* [ ] Better countermeasures
+* [ ] Better documentation
