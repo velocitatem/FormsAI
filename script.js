@@ -34,7 +34,7 @@ await fetch(url).then(res => res.json()).then(async (data) => {
     for (let i = 0; i < questions.length; i++) {
         let question = questions[i];
         let response;
-        if (question.widgets[0].options) {
+        if (question.widges && question.widgets[0].options) {
             // MC question
             let choices = question.widgets[0].options.map((option) => option.label);
             // remove any empty strings from the choices
