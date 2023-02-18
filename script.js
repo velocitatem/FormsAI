@@ -65,4 +65,5 @@ await fetch(url).then(res => res.json()).then(async (data) => {
         console.log(question);
     }
     console.log(urlObj.toString());
+    window.open(urlObj.toString(), '_blank');
 })

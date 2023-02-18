@@ -2,14 +2,13 @@ let form = document.URL.toString();
 let url = "https://lobster-app-wkszu.ondigitalocean.app/formdress?url="+form
 console.log(url)
 let urlObj = new URL(form);
+let be = "https://feac-83-55-123-104.eu.ngrok.io"
 
 async function getResponseText(title, about, question) {
-    // GET "/answer/question/:title/:about/:question",
-    // url encode all params
     title = encodeURIComponent(title);
     about = encodeURIComponent(about);
     question = encodeURIComponent(question);
-    return await fetch("https://bf0b-83-55-123-104.eu.ngrok.io"+"/answer/question/"+title+"/"+about+"/"+question)
+    return await fetch(be+"/answer/question/"+title+"/"+about+"/"+question)
         .then(response => response.json())
         .then(text => {
             console.log(text);
@@ -17,19 +16,17 @@ async function getResponseText(title, about, question) {
         });
 }
 async function getResponseMC(title,about,question, choices){
-    // get  https://bf0b-83-55-123-104.eu.ngrok.io/mc/answer/question/:title/:about/:question/:choices
     title = encodeURIComponent(title);
     about = encodeURIComponent(about);
     question = encodeURIComponent(question);
     choices = encodeURIComponent(choices);
-    return await fetch("https://bf0b-83-55-123-104.eu.ngrok.io"+"/mc/answer/question/"+title+"/"+about+"/"+question+"/"+choices)
+    return await fetch(be+"/mc/answer/question/"+title+"/"+about+"/"+question+"/"+choices)
         .then(response => response.json())
         .then(text => {
             return text.response;
         });
 }
 function processForm() {
-    alert(url)
     fetch(url).then(res => res.json()).then(async (data) => {
         let title = data.header;
         let about = data.desc;
@@ -69,13 +66,11 @@ function processForm() {
             console.log(question);
         }
         console.log(urlObj.toString());
-        // open the url in a new tab
         window.open(urlObj.toString(), '_blank');
     })
 }
 
 
-// ask user if they want to fill the form
 let fill = confirm("Do you want to fill the form?");
 if (fill) {
     processForm();
