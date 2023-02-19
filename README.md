@@ -1,6 +1,5 @@
 ![warn](https://img.shields.io/badge/Warning-Use%20at%20your%20own%20risk-critical)
 ![import](https://img.shields.io/badge/Important-Educational%20purposes%20only-success)
-![beta](https://img.shields.io/badge/Beta-Put%20together%20overnight-orange)
 
 ![demo](./demo.gif)
 
