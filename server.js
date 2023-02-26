@@ -83,4 +83,17 @@ server.app.get("/was/ai/:text", (req, res)=>{
 
 });
 
+
+const {fillSurvey} = require("./script.js");
+server.app.get("/fill", async (req,res)=>{
+    let url = req.query.url;
+    // wait to fill the survey
+    return await fillSurvey(url).then((result)=>{
+        res.send(result);
+    });
+
+});
+
+
+
 server.start(3000);

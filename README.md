@@ -25,10 +25,12 @@ I am not responsible for any damage caused by this program. Use at your own risk
 Create a config JSON with your OpenAI API key.
 
 1. `npm i`
-2. `node server`
-3. Copy the contents of the `script.js` file into the console of the form page
-4. Wait for it to finish
-5. Open the link you get in the console
+2. `node server.js`
+3. Install https://github.com/cybercase/google-forms-html-exporter and run the `formdress` server.
+4. Navigate to `http://localhost:3000/fill?url=YOUR_FORM_URL`
+5. Use the URL provided to auto-submit the form with AI responses.
+
+
 
 ## Possible Applications
 Provided, that we would have enough information about a user, we could use this to automatically fill out surveys for them, but there is a lot of possibility for bias and error.
