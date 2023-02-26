@@ -29,6 +29,36 @@ server.app.get("/mc/answer/question/:title/:about/:question/:choices", (req, res
     });
 });
 
+//  let url = "http://localhost:3000/formdress?url="+form
+server.app.get("/formdress", async (req, res)=>{
+    // there is a formdress cli in this directory
+    // ./backend/google-forms-html-exporter/cmd/formdress/formdress -f [form url]
+    // this will output a json
+
+
+    let form = req.query.url;
+    // run the formdress cli
+    let cmd = `/backend/google-forms-html-exporter/cmd/formdress/formdress -f ${form}`;
+    // dirname + cmd
+    cmd = __dirname + cmd;
+    console.log(cmd);
+    // add current directory to path
+    // improt exec
+    const { exec } = require('child_process');
+
+    console.log("running formdress");
+    let formdress = await exec(cmd);
+    // wait for formdress to finish and then send the json
+    // handle error
+    // accumulate data
+    let data = "";
+    formdress.stderr.on('data', (data) => {
+
+    });
+
+
+})
+
 server.app.get("/was/ai/:text", (req, res)=>{
     let text = req.params.text;
     request.post({

@@ -1,6 +1,9 @@
-let form = document.URL.toString();
-let url = "https://lobster-app-wkszu.ondigitalocean.app/formdress?url="+form
+let form = "https://docs.google.com/forms/d/e/1FAIpQLSemU-4ioUNbzFGoez0IRhlDhXn1nJTCMYjwABPpu_791uGjLA/viewform"
+let url = "https://361e-83-55-123-104.eu.ngrok.io/formdress?url="+form
 let urlObj = new URL(form);
+
+// node import fetch
+
 async function getResponseText(title, about, question) {
     // GET "/answer/question/:title/:about/:question",
     // url encode all params
@@ -26,7 +29,12 @@ async function getResponseMC(title,about,question, choices){
             return text.response;
         });
 }
-await fetch(url).then(res => res.json()).then(async (data) => {
+const fetch = import('node-fetch');
+fetch(url, {
+    method: 'GET',
+    mode: 'cors',
+    }).then(res => res.json()).then(async (data) => {
+
     let title = data.header;
     let about = data.desc;
     let questions = data.fields;
@@ -65,5 +73,4 @@ await fetch(url).then(res => res.json()).then(async (data) => {
         console.log(question);
     }
     console.log(urlObj.toString());
-    window.open(urlObj.toString(), '_blank');
 })

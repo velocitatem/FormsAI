@@ -21,6 +21,7 @@
   "dependencies": {
     "ai.suppress.js": "^1.3.3",
     "mix.suppress.js": "^1.0.2",
+    "node-fetch": "^3.3.0",
     "request": "^2.88.2"
   }
 }
